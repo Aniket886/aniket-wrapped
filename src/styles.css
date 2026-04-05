@@ -1,5 +1,5 @@
 :root {
-  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-family: "Manrope", "Segoe UI", sans-serif;
   color: #f7f3e9;
   background:
     radial-gradient(circle at top left, rgba(247, 105, 66, 0.24), transparent 32%),
@@ -16,6 +16,8 @@
   --teal: #4db09d;
   --sand: #f0d6a7;
   --ink: #0b0b0d;
+  --font-body: "Manrope", "Segoe UI", sans-serif;
+  --font-display: "Syne", "Arial Black", sans-serif;
 }
 
 * {
@@ -26,6 +28,8 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  font-family: var(--font-body);
+  letter-spacing: -0.015em;
 }
 
 a {
@@ -88,10 +92,13 @@ select {
 
 .eyebrow {
   margin: 0;
+  font-family: var(--font-body);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.24em;
-  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  font-size: 0.68rem;
   color: var(--sand);
+  opacity: 0.94;
 }
 
 .hero h1,
@@ -99,21 +106,27 @@ select {
 .hero--error h1,
 .hero--loading h1 {
   margin: 0;
-  line-height: 0.95;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.88;
   font-size: clamp(3rem, 7vw, 6.4rem);
 }
 
 .hero h1 span {
   display: block;
   color: var(--sand);
+  font-size: 0.92em;
 }
 
 .lede {
   max-width: 44rem;
   margin: 0;
   color: rgba(247, 243, 233, 0.82);
-  font-size: 1.06rem;
-  line-height: 1.6;
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.72;
+  letter-spacing: -0.02em;
 }
 
 .hero__chips {
@@ -127,6 +140,9 @@ select {
 .hero__cover span,
 .hero__aside span,
 .footer a {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   padding: 0.55rem 0.85rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.08);
@@ -151,6 +167,9 @@ select {
 }
 
 .hero__cover strong {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.06em;
   font-size: clamp(3.5rem, 8vw, 6.4rem);
   line-height: 0.9;
 }
@@ -158,9 +177,10 @@ select {
 .hero__cover-label,
 .repo-card__eyebrow {
   margin: 0;
+  font-weight: 800;
   text-transform: uppercase;
-  font-size: 0.74rem;
-  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
 }
 
 .hero__aside {
@@ -170,6 +190,9 @@ select {
 }
 
 .hero__aside h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.05em;
   font-size: clamp(2.4rem, 5vw, 4rem);
 }
 
@@ -197,12 +220,18 @@ select {
 .subtle {
   margin: 0;
   color: rgba(247, 243, 233, 0.72);
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
   line-height: 1.5;
 }
 
 .stat-card strong {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.06em;
   font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1;
+  line-height: 0.94;
 }
 
 .stat-card--light {
@@ -252,6 +281,12 @@ select {
   gap: 0.8rem;
 }
 
+.language-row__label strong {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
 .language-row__label span {
   width: 2rem;
   height: 2rem;
@@ -259,6 +294,7 @@ select {
   place-items: center;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.09);
+  font-weight: 800;
 }
 
 .language-row__bar {
@@ -277,6 +313,8 @@ select {
 
 .language-row em {
   font-style: normal;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   color: var(--sand);
 }
 
@@ -298,7 +336,11 @@ select {
 
 .repo-card h3 {
   margin: 0;
-  font-size: 1.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  font-size: 1.7rem;
 }
 
 .repo-card__meta {
@@ -337,6 +379,9 @@ select {
 }
 
 .finale-stamp span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.04em;
   font-size: 1.5rem;
   color: var(--sand);
 }
@@ -347,6 +392,10 @@ select {
   align-items: center;
   gap: 1rem;
   padding: 0.75rem 0.1rem 0;
+}
+
+.footer a {
+  text-decoration: none;
 }
 
 .hero--loading,
@@ -430,5 +479,15 @@ select {
 
   .hero {
     min-height: auto;
+  }
+
+  .lede,
+  .stat-card p,
+  .stat-card span,
+  .panel__intro p,
+  .repo-card p,
+  .footer p,
+  .subtle {
+    font-size: 0.94rem;
   }
 }
